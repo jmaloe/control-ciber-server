@@ -1,0 +1,110 @@
+.icono{
+	width:30px;
+    height:30px;    
+}
+
+.actividad_evento{
+	cursor:pointer;
+}
+
+.acciones{
+  display: none;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  padding: 2px;
+}
+
+#accion{
+	background-image: url('../imagenes/fade.png');
+}
+
+.CURSO{
+	background:url('../imagenes/icono_curso.png') no-repeat;
+}
+
+.DIPLOMADO{
+	background:url('../imagenes/icono_diplomado.png') no-repeat;	
+}
+
+.TALLER{
+	background:url('../imagenes/icono_taller.png') no-repeat;
+}
+
+.SEMINARIO{
+	background:url('../imagenes/icono_seminario.png') no-repeat;
+}
+
+.CERTIFICACION{
+	background:url('../imagenes/icono_certificacion.png') no-repeat;
+}
+
+.CURSOAUTOGESTIVO{
+	background:url('../imagenes/icono_cursoautogestivo.png') no-repeat;
+}
+
+.COLOQUIO{
+	background:url('../imagenes/icono_coloquio.png') no-repeat;
+}
+
+.CONFERENCIA{
+	background:url('../imagenes/icono_conferencia.png') no-repeat;
+}
+
+.CONGRESO{
+	background:url('../imagenes/icono_congreso.png') no-repeat;
+}
+
+.CONVENCION{
+	background:url('../imagenes/icono_convencion.png') no-repeat;
+}
+
+.DEBATE{
+	background:url('../imagenes/icono_debate.png') no-repeat;
+}
+
+.FORO{
+	background:url('../imagenes/icono_foro.png') no-repeat;
+}
+
+.JORNADA{
+	background:url('../imagenes/icono_jornada.png') no-repeat;
+}
+
+.PANEL{
+	background:url('../imagenes/icono_panel.png') no-repeat;
+}
+
+.SIMPOSIO{
+	background:url('../imagenes/icono_simposio.png') no-repeat;
+}
+
+.VIDEOCONFERENCIA{
+    background:url('../imagenes/icono_videoconferencia.png') no-repeat;
+}
+
+.OTRO{
+	background:url('../imagenes/icono_otro.png') no-repeat;
+}
+
+.PRESENCIAL{
+	background:url('../imagenes/modo_presencial.png') no-repeat;
+}
+
+.VIRTUAL{
+	background:url('../imagenes/modo_virtual.png') no-repeat;
+}
+
+.SEMIPRESENCIAL{
+	background:url('../imagenes/modo_semipresencial.png') no-repeat;
+}
+
+.buscar{
+	background:url('../imagenes/busqueda_icon.png') no-repeat;
+	background-size: 100% 100%;
+	display:inline-flex;
+	vertical-align: middle;
+	margin-right: 5px;
+}

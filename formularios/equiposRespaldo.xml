@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<equipos>
+<pc id="12" status="finished">
+    <Tag>Server</Tag>
+    <horaInicio>20:02:53</horaInicio>
+    <horaTermino>20:07:40</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5252"><descripcion>Internet</descripcion><cantidad>5 mins</cantidad><total>5</total></producto></prodservs>
+</pc><pc id="4" status="finished">
+    <Tag>PC 5</Tag>
+    <horaInicio>10:30:15</horaInicio>
+    <horaTermino>10:33:55</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5496"><descripcion>Internet</descripcion><cantidad>3 mins</cantidad><total>3</total></producto></prodservs>
+</pc><pc id="15" status="finished">
+    <Tag>Wifi 05</Tag>
+    <horaInicio>11:07:06</horaInicio>
+    <horaTermino>12:46:06</horaTermino>
+    <tiempoRestante>21 mins</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5536"><descripcion>Internet</descripcion><cantidad>99 mins</cantidad><total>20</total></producto></prodservs>
+</pc><pc id="18" status="finished">
+    <Tag>Wifi 06</Tag>
+    <horaInicio>11:09:27</horaInicio>
+    <horaTermino>12:46:09</horaTermino>
+    <tiempoRestante>23 mins</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5537"><descripcion>Internet</descripcion><cantidad>97 mins</cantidad><total>20</total></producto></prodservs>
+</pc><pc id="17" status="finished">
+    <Tag>Samsung</Tag>
+    <horaInicio>11:00:24</horaInicio>
+    <horaTermino>13:46:43</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="28" noreg="5662"><descripcion>COPIA</descripcion><cantidad>1</cantidad><total>1.00</total></producto><producto id="0" noreg="5663"><descripcion>No especificado</descripcion><cantidad>1</cantidad><total>0</total></producto></prodservs>
+</pc><pc id="16" status="finished">
+    <Tag>Canon</Tag>
+    <horaInicio>12:25:52</horaInicio>
+    <horaTermino>12:26:13</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="33" noreg="5664"><descripcion>CURP a COLOR</descripcion><cantidad>1.00</cantidad><total>20</total></producto><producto id="47" noreg="5665"><descripcion>Enmicado t/credencial</descripcion><cantidad>1</cantidad><total>10</total></producto></prodservs>
+</pc><pc id="13" status="finished">
+    <Tag>PC 1</Tag>
+    <horaInicio>16:16:08</horaInicio>
+    <horaTermino>16:39:38</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5738"><descripcion>Internet</descripcion><cantidad>23 mins</cantidad><total>5</total></producto></prodservs>
+</pc><pc id="1" status="finished">
+    <Tag>PC 2</Tag>
+    <horaInicio>13:47:29</horaInicio>
+    <horaTermino>15:49:37</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5753"><descripcion>Internet</descripcion><cantidad>122 mins</cantidad><total>20</total></producto><producto id="28" noreg="5754"><descripcion>COPIA</descripcion><cantidad>19</cantidad><total>19</total></producto></prodservs>
+</pc><pc id="8" status="finished">
+    <Tag>Wifi 02</Tag>
+    <horaInicio>11:05:26</horaInicio>
+    <horaTermino>11:36:56</horaTermino>
+    <tiempoRestante>-1 mins</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5797"><descripcion>Internet</descripcion><cantidad>31 mins</cantidad><total>5</total></producto></prodservs>
+</pc><pc id="10" status="finished">
+    <Tag>Wifi 03</Tag>
+    <horaInicio>11:05:59</horaInicio>
+    <horaTermino>11:37:01</horaTermino>
+    <tiempoRestante>-1 mins</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5798"><descripcion>Internet</descripcion><cantidad>31 mins</cantidad><total>5</total></producto></prodservs>
+</pc><pc id="14" status="finished">
+    <Tag>Wifi 04</Tag>
+    <horaInicio>11:06:27</horaInicio>
+    <horaTermino>11:37:04</horaTermino>
+    <tiempoRestante>-1 mins</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5799"><descripcion>Internet</descripcion><cantidad>31 mins</cantidad><total>5</total></producto></prodservs>
+</pc><pc id="7" status="finished">
+    <Tag>Wifi 01</Tag>
+    <horaInicio>11:23:40</horaInicio>
+    <horaTermino>12:45:05</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5820"><descripcion>Internet</descripcion><cantidad>81 mins</cantidad><total>15</total></producto></prodservs>
+</pc><pc id="9" status="finished">
+    <Tag>HP M125nw</Tag>
+    <horaInicio>11:05:13</horaInicio>
+    <horaTermino>11:08:35</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="0" noreg="5822"><descripcion>No especificado</descripcion><cantidad>1.00</cantidad><total>0</total></producto></prodservs>
+</pc><pc id="3" status="running">
+    <Tag>PC 4</Tag>
+    <horaInicio>10:06:16</horaInicio>
+    <horaTermino>00:00:00</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5826"><descripcion>Internet</descripcion><cantidad>0 mins</cantidad><total>3</total></producto></prodservs>
+</pc><pc id="2" status="running">
+    <Tag>PC 3</Tag>
+    <horaInicio>10:06:22</horaInicio>
+    <horaTermino>00:00:00</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="5827"><descripcion>Internet</descripcion><cantidad>1</cantidad><total>0</total></producto></prodservs>
+</pc></equipos>
