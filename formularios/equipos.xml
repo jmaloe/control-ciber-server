@@ -49,13 +49,6 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="1" noreg="5738"><descripcion>Internet</descripcion><cantidad>23 mins</cantidad><total>5</total></producto></prodservs>
-</pc><pc id="1" status="finished">
-    <Tag>PC 2</Tag>
-    <horaInicio>13:47:29</horaInicio>
-    <horaTermino>15:49:37</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="1" noreg="5753"><descripcion>Internet</descripcion><cantidad>122 mins</cantidad><total>20</total></producto><producto id="28" noreg="5754"><descripcion>COPIA</descripcion><cantidad>19</cantidad><total>19</total></producto></prodservs>
 </pc><pc id="8" status="finished">
     <Tag>Wifi 02</Tag>
     <horaInicio>11:05:26</horaInicio>
@@ -84,25 +77,32 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="1" noreg="5820"><descripcion>Internet</descripcion><cantidad>81 mins</cantidad><total>15</total></producto></prodservs>
-</pc><pc id="9" status="finished">
-    <Tag>HP M125nw</Tag>
-    <horaInicio>11:05:13</horaInicio>
-    <horaTermino>11:08:35</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="0" noreg="5822"><descripcion>No especificado</descripcion><cantidad>1.00</cantidad><total>0</total></producto></prodservs>
-</pc><pc id="3" status="running">
+</pc><pc id="3" status="finished">
     <Tag>PC 4</Tag>
     <horaInicio>10:06:16</horaInicio>
     <horaTermino>00:00:00</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="1" noreg="5826"><descripcion>Internet</descripcion><cantidad>13 mins</cantidad><total>5</total></producto></prodservs>
-</pc><pc id="2" status="running">
-    <Tag>PC 3</Tag>
-    <horaInicio>10:06:22</horaInicio>
+</pc><pc id="1" status="running">
+    <Tag>PC 01</Tag>
+    <horaInicio>14:17:37</horaInicio>
     <horaTermino>00:00:00</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="1" noreg="5827"><descripcion>Internet</descripcion><cantidad>13 mins</cantidad><total>5</total></producto></prodservs>
+    <producto id="2" noreg="0"><descripcion/><cantidad>1</cantidad><total>1</total></producto><producto id="1" noreg="Cannot add or update a child row: a foreign key constraint fails (`dbmycontrol`.`detalledeventa`, CONSTRAINT `detalledeventa_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE)&lt;br &gt;&lt;/div&gt;&#10;&lt;b&gt;Warning&lt;/b&gt;:  Trying to access array offset on value of type null in &lt;b&gt;C:\xampp\htdocs\control-ciber-server\clases\CProductos.php&lt;/b&gt; on line &lt;b&gt;118&lt;/b&gt;&lt;br /&gt;&#10;&lt;br /&gt;&#10;&lt;b&gt;Warning&lt;/b&gt;:  Trying to access array offset on value of type null in &lt;b&gt;C:\xampp\htdocs\control-ciber-server\clases\CProductos.php&lt;/b&gt; on line &lt;b&gt;119&lt;/b&gt;&lt;br /&gt;&#10;&lt;br /&gt;&#10;&lt;b&gt;Warning&lt;/b&gt;:  Trying to access array offset on value of type null in &lt;b&gt;C:\xampp\htdocs\control-ciber-server\clases\CProductos.php&lt;/b&gt; on line &lt;b&gt;120&lt;/b&gt;&lt;br /&gt;&#10;&lt;br /&gt;&#10;&lt;b&gt;Warning&lt;/b&gt;:  Trying to access array offset on value of type null in &lt;b&gt;C:\xampp\htdocs\control-ciber-server\clases\CProductos.php&lt;/b&gt; on line &lt;b&gt;121&lt;/b&gt;&lt;br /&gt;&#10;&lt;br /&gt;&#10;&lt;b&gt;Warning&lt;/b&gt;:  Trying to access array offset on value of type null in &lt;b&gt;C:\xampp\htdocs\control-ciber-server\clases\CProductos.php&lt;/b&gt; on line &lt;b&gt;122&lt;/b&gt;&lt;br /&gt;&#10;0"><descripcion/><cantidad>16 mins</cantidad><total>5</total></producto><producto id="1" noreg="3"><descripcion>Internet</descripcion><cantidad>16 mins</cantidad><total>5</total></producto></prodservs>
+</pc><pc id="2" status="finished">
+    <Tag>PC 02</Tag>
+    <horaInicio>14:20:55</horaInicio>
+    <horaTermino>14:22:01</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="4"><descripcion/><cantidad>1 mins</cantidad><total>3</total></producto></prodservs>
+</pc><pc id="9" status="running">
+    <Tag>WIFI 01</Tag>
+    <horaInicio>14:25:09</horaInicio>
+    <horaTermino>00:00:00</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="1" noreg="8"><descripcion>Internet</descripcion><cantidad>8 mins</cantidad><total>5</total></producto></prodservs>
 </pc></equipos>
