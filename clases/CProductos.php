@@ -98,11 +98,11 @@
  	 		  echo '<tr>';
  	 		  $flag=true;
  	 		}
- 	 			echo '<td>'.$cont.'</td>';
- 	 			echo '<td>'.$data[0].'</td>';
- 	 			echo '<td>'.$data[1].'</td>';
- 	 			echo '<td>'.$data[2].'</td>';
- 	 			echo '<td>'.$data[3].'</td>';
+ 	 			echo '<td>'.$cont.'</td>'; //cns
+ 	 			echo '<td style="color:lightgray">'.$data[0].'</td>'; //ID
+ 	 			echo '<td>'.$data[1].'</td>'; //Nombre
+ 	 			echo '<td>'.$data[2].'</td>'; //Descripcion
+ 	 			echo '<td style="text-align:right !important;">'.$data[3].'</td>'; //precio
  	 		echo '</tr>';
  	 		$cont++;
  	 	}
