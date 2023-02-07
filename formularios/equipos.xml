@@ -63,13 +63,6 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="1" noreg="4"><descripcion/><cantidad>1 mins</cantidad><total>3</total></producto></prodservs>
-</pc><pc id="9" status="finished">
-    <Tag>WIFI 01</Tag>
-    <horaInicio>14:25:09</horaInicio>
-    <horaTermino>14:37:52</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="1" noreg="8"><descripcion>Internet</descripcion><cantidad>12 mins</cantidad><total>5</total></producto></prodservs>
 </pc><pc id="1" status="finished">
     <Tag>PC 01</Tag>
     <horaInicio>11:56:42</horaInicio>
@@ -84,25 +77,32 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="28" noreg="0"><descripcion/><cantidad>1</cantidad><total>0</total></producto><producto id="3" noreg="14"><descripcion>Impresion a Color</descripcion><cantidad>1</cantidad><total>30</total></producto><producto id="3" noreg="15"><descripcion>Impresion a Color</descripcion><cantidad>1</cantidad><total>35</total></producto></prodservs>
-</pc><pc id="18" status="finished">
-    <Tag>LenovoY50-70</Tag>
-    <horaInicio>21:35:01</horaInicio>
-    <horaTermino>21:35:33</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="21" noreg="8067"><descripcion>Servicio Mantenimiento</descripcion><cantidad>1</cantidad><total>100</total></producto></prodservs>
-</pc><pc id="7" status="running">
+</pc><pc id="7" status="finished">
     <Tag>Wifi 01</Tag>
     <horaInicio>10:50:01</horaInicio>
-    <horaTermino>11:20:01</horaTermino>
-    <tiempoRestante>4 mins</tiempoRestante>
+    <horaTermino>11:21:03</horaTermino>
+    <tiempoRestante>0 mins</tiempoRestante>
     <prodservs>
-    <producto id="1" noreg="8072"><descripcion>Internet</descripcion><cantidad>26 mins</cantidad><total>5</total></producto></prodservs>
-</pc><pc id="17" status="running">
-    <Tag>Canon G4110</Tag>
-    <horaInicio>11:07:21</horaInicio>
-    <horaTermino>00:00:00</horaTermino>
+    <producto id="1" noreg="8072"><descripcion>Internet</descripcion><cantidad>30 mins</cantidad><total>5</total></producto></prodservs>
+</pc><pc id="9" status="finished">
+    <Tag>HP LaserJet M12</Tag>
+    <horaInicio>19:42:47</horaInicio>
+    <horaTermino>19:43:22</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="44" noreg="8073"><descripcion>Impresion a Color T/Carta</descripcion><cantidad>1.00</cantidad><total>10</total></producto><producto id="49" noreg="8074"><descripcion>Hoja Opalina</descripcion><cantidad>1</cantidad><total>3</total></producto></prodservs>
+    <producto id="28" noreg="8120"><descripcion>COPIA</descripcion><cantidad>8</cantidad><total>12</total></producto></prodservs>
+</pc><pc id="18" status="finished">
+    <Tag>LenovoY50-70</Tag>
+    <horaInicio>19:38:41</horaInicio>
+    <horaTermino>19:38:54</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="25" noreg="8142"><descripcion>Musica MP3 / 10 pzs</descripcion><cantidad>2</cantidad><total>20</total></producto></prodservs>
+</pc><pc id="17" status="finished">
+    <Tag>Canon G4110</Tag>
+    <horaInicio>08:45:57</horaInicio>
+    <horaTermino>08:46:36</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="28" noreg="8148"><descripcion>COPIA</descripcion><cantidad>4</cantidad><total>8</total></producto><producto id="13" noreg="8149"><descripcion>Copia INE/CURP</descripcion><cantidad>1</cantidad><total>3</total></producto><producto id="33" noreg="8150"><descripcion>CURP a COLOR</descripcion><cantidad>1</cantidad><total>20</total></producto></prodservs>
 </pc></equipos>
