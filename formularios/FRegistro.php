@@ -25,7 +25,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Malo's Ciber: Registro de venta</title>
+		<title>Servicios JM: Registro de venta</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Registro Entradas">
@@ -50,13 +50,13 @@
 						
 						<ul class="tabs-menu">
 							<li id="tab1" class="current">
-								<a href="#tab-1" class="goTab" value="1">Venta</a>
+								<a href="#tab-1" class="goTab" value="1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Venta</a>
 							</li>			
 							<li id="tab2">
-								<a href="#tab-2" class="goTab" value="2">Historial</a>
+								<a href="#tab-2" class="goTab" value="2"><i class="fa fa-history" aria-hidden="true"></i> Historial</a>
 							</li>
 							<li id="tab3">
-								<a href="#tab-3" class="goTab" value="3">Precios</a>
+								<a href="#tab-3" class="goTab" value="3"><i class="fa fa-tags" aria-hidden="true"></i> Precios</a>
 							</li>
 						</ul>						
 						
@@ -115,7 +115,7 @@
   				<p>Esperando resultado...</p>
 			</div>
 		<?php echo getHomeButton(); ?>
-		<footer>Malo's Ciber 2017 - By: dic.malo@gmail.com</footer>
+		<footer>Servicios JM 2023 - By: dic.malo@gmail.com</footer>
 		</div>
 	</body>
 </html>
@@ -317,7 +317,18 @@ $(document).ready(function() {
 		if(input_disponible)
 			return;
 		if($(parent).attr("no_venta")!=undefined)
-			agregarDetalleVentaEnDB( $("#"+$(this).val()) , {"id_equipo":$(parent).attr("id"), "no_venta":$(parent).attr("no_venta"),"id_producto":"2","cantidad":"1","precio":"1","total":"1","artDefault":getValorEnDataListByID(2,"value")});
+			agregarDetalleVentaEnDB( 
+				$("#"+$(this).val()) , 
+				{
+					"id_equipo":$(parent).attr("id"), 
+					"no_venta":$(parent).attr("no_venta"),
+					"id_producto":"28",
+					"cantidad":"1",
+					"precio":"2",
+					"total":"2",
+					"artDefault":getValorEnDataListByID(28,"value")
+				}
+			);
 	});
 
 	$("#equipos").on("click",".hf",function(event){
@@ -401,6 +412,7 @@ $(document).ready(function() {
 		var parent = $(this).parent().parent();		
 		var precio = getValorEnDataList($(this).val(), "precio_venta");
 		var cantidad = $(parent).find(".cantidad").val();
+		console.log($(parent).find(".cantidad"))
 		$(parent).find(".cantidad").focus();
 		$(parent).find(".precio").val(precio);
 		$(parent).find(".total").val(cantidad*precio);
@@ -636,7 +648,7 @@ $(document).ready(function() {
 	  else {	  	
         var audio = document.getElementById("audio_notificacion");
         audio.play();        
-	    var notification = new Notification("Malo's Ciber", {
+	    var notification = new Notification("Servicios JM", {
 	      icon: '../imagenes/favicon.ico',
 	      body: "Tiempo terminado para "+nombre_equipo,
 	    });

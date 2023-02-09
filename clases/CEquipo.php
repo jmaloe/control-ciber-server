@@ -158,7 +158,7 @@
 						<div class="doce"><input type="time" class="hf" style="width:100%" value="'.$dato['hora_termino'].'"/></div>
 					</div>
 					<div class="nueve" style="display: inline-block;" id="prodsxeq_'.$dato['id_equipo'].'">
-						<button type="button" class="btn btn-info agregar-articulo" value="prodsxeq_'.$dato['id_equipo'].'" title="Agregar producto/servicio"><i class="fa fa-pencil" aria-hidden="true"></i></button>						
+						<button type="button" class="btn btn-info agregar-articulo" value="prodsxeq_'.$dato['id_equipo'].'" title="Agregar producto/servicio"><i class="fa fa-plus" aria-hidden="true"></i></button>						
 						<button type="button" class="btn btn-light '.($dato['pago_anticipado']==1?"moneda-on":"moneda-off").' checkpagado" value="'.$dato['id_equipo'].'" title="Marcar como pagado"> </button>
 						<input type="text" name="nota" class="nota form-control" placeholder="Comentario" value="'.$dato['nota'].'">
 						<button type="button" class="btn btn-success pagado" style="display:none; margin-left:5px;">Pagado</button>

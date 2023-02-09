@@ -91,18 +91,18 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="28" noreg="8120"><descripcion>COPIA</descripcion><cantidad>8</cantidad><total>12</total></producto></prodservs>
-</pc><pc id="18" status="finished">
-    <Tag>LenovoY50-70</Tag>
-    <horaInicio>19:38:41</horaInicio>
-    <horaTermino>19:38:54</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="25" noreg="8142"><descripcion>Musica MP3 / 10 pzs</descripcion><cantidad>2</cantidad><total>20</total></producto></prodservs>
 </pc><pc id="17" status="finished">
     <Tag>Canon G4110</Tag>
-    <horaInicio>08:45:57</horaInicio>
-    <horaTermino>08:46:36</horaTermino>
+    <horaInicio>12:12:23</horaInicio>
+    <horaTermino>13:29:17</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="28" noreg="8148"><descripcion>COPIA</descripcion><cantidad>4</cantidad><total>8</total></producto><producto id="13" noreg="8149"><descripcion>Copia INE/CURP</descripcion><cantidad>1</cantidad><total>3</total></producto><producto id="33" noreg="8150"><descripcion>CURP a COLOR</descripcion><cantidad>1</cantidad><total>20</total></producto></prodservs>
+    <producto id="28" noreg="8197"><descripcion>COPIA</descripcion><cantidad>2</cantidad><total>4</total></producto><producto id="5" noreg="8198"><descripcion>Folder tama&#xF1;o carta</descripcion><cantidad>1</cantidad><total>6</total></producto></prodservs>
+</pc><pc id="18" status="finished">
+    <Tag>LenovoY50-70</Tag>
+    <horaInicio>13:29:20</horaInicio>
+    <horaTermino>13:29:38</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="25" noreg="8199"><descripcion>Musica MP3 / 10 pzs</descripcion><cantidad>1</cantidad><total>10</total></producto></prodservs>
 </pc></equipos>

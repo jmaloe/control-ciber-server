@@ -15,7 +15,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Malo's Ciber Control</title>
+		<title>Servicios JM Control</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Formulario principal">
 		<meta name="author" content="Jesús Malo Escobar">
@@ -139,7 +139,7 @@ enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
 		<?php			
 		}
 		?>
-		<footer>Malo's Ciber 2017 - By: dic.malo@gmail.com</footer>
+		<footer>Servicios JM 2023 - By: dic.malo@gmail.com</footer>
 		</div>		
 	</body>
 </html>

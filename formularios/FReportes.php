@@ -15,7 +15,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Malo's Ciber: Reportes</title>
+		<title>Servicios JM: Reportes</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Formulario de reportes">
 		<meta name="author" content="Jesús Malo Escobar">
@@ -78,7 +78,7 @@ session_start();
 		        </div>
 		        <?php echo getHomeButton(); ?>
 		    </form>	        
-			<footer>Malo's Ciber 2017 - By: dic.malo@gmail.com</footer>
+			<footer>Servicios JM 2023 - By: dic.malo@gmail.com</footer>
 		</div>
 		<?php getScripts(); ?>
 		<script src="../js/ChartJS/Chart.js"></script>
