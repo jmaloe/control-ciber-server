@@ -96,7 +96,8 @@
 						</div>
 						<div id="tab-2" class="tab-content">
 							<div id="date">
-								<input type="date" id="fecha_consulta">
+								<input type="date" id="fecha_consulta_i">
+								⇒ <input type="date" id="fecha_consulta_f">
 								<button type="button" class="btn btn-success btn_consultar_historial" value="2">Consultar</button>
 							</div>
 							<div id="HistorialVentas">
@@ -167,7 +168,10 @@ $(document).ready(function() {
 		$.ajax({
 		  type: "POST", //id_producto,cantidad,precio,total, cnsdv+
 		  url: "HistorialVentas.php",
-		  data: {"fecha":$("#fecha_consulta").val()},
+		  data: {
+			"fecha_inicial":$("#fecha_consulta_i").val(),
+			"fecha_final":$("#fecha_consulta_f").val()
+		  },
 		  success: function(result){
 		  	$("#HistorialVentas").html(result);		  	
 		  },
@@ -603,7 +607,8 @@ $(document).ready(function() {
 		}
 	},15000);
 
-	$("#fecha_consulta").val(getCurrentDate());
+	$("#fecha_consulta_i").val(getCurrentDate());
+	$("#fecha_consulta_f").val(getCurrentDate());
 
 	calcularTiempoyTotales(); //al cargar la pagina web de inmediato calculamos los totales
 

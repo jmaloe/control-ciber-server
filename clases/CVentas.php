@@ -5,7 +5,8 @@
  class CVentas extends ConexionDB{
  	var $no_venta,
  		$id_equipo,
- 		$fecha,
+ 		$fecha_inicial,
+		$fecha_final,
  		$horaInicio,
  		$horaTermino,
  		$total=0,
@@ -25,9 +26,13 @@
  		$this->id_equipo = $ide;
  	}
 
- 	function setFecha($fc){
- 		$this->fecha = $this->getFechaToMysql($fc);
+ 	function setFechaInicial($fc){
+ 		$this->fecha_inicial = $this->getFechaToMysql($fc);
  	}
+
+	 function setFechaFinal($fc){
+		$this->fecha_final = $this->getFechaToMysql($fc);
+	}
 	
  	function setHoraInicio($hi){
  		$this->horaInicio = $hi;
@@ -54,8 +59,12 @@
  		return $this->id_equipo;
  	}
 
- 	function getFecha(){
- 		return $this->fecha;
+ 	function getFechaInicial(){
+ 		return $this->fecha_inicial;
+ 	}
+
+ 	function getFechaFinal(){
+ 		return $this->fecha_final;
  	}
 
  	function getHoraInicio(){
@@ -140,16 +149,58 @@
  	}
 
  	function getHistorialVentas(){
- 		$sql = "SELECT no_venta,v.id_equipo,e.tag,hora_inicio,hora_termino,nota,total FROM Venta v, Equipo e WHERE e.id_equipo=v.id_equipo AND DATE(fecha)='".$this->fecha."' ORDER BY no_venta DESC";
+ 		$sql = "SELECT 
+					no_venta,
+					v.id_equipo,
+					e.tag,
+					DATE(fecha) as fecha,
+					hora_inicio,
+					hora_termino,
+					nota,
+					total 
+				FROM 
+					Venta v, 
+					Equipo e 
+				WHERE 
+					e.id_equipo = v.id_equipo 
+					AND DATE(fecha) BETWEEN '".$this->fecha_inicial."' AND '".$this->fecha_final."' 
+				ORDER BY 
+					no_venta DESC";
+		
  		$resultado = $this->query($sql);
- 		$ventatotal=0; 		
- 		$flag=0;
+ 		$ventatotal = 0;
+		$ventaxdia = 0;
+ 		$flag = 0;
+		$flagFecha = "";
  	 	if($resultado)
  	 	{
  	 		echo '<table width="100%">';
- 	 		echo '<tr><th>#Venta</th><th>#PC</th><th>Descripcion</th><th>Hora inicio</th><th>Hora Termino</th><th>Observaciones</th><th>Total</th></tr>';
+ 	 		echo "<tr>
+					<th>#Venta</th>
+					<th>#PC</th>
+					<th>Descripcion</th>
+					<th>Hr. inicio</th>
+					<th>Hr. Termino</th>
+					<th>Obs.</th>
+					<th>Total</th>
+				  </tr>";
  	 		while($dato = mysqli_fetch_assoc($resultado))
- 	 		{ 	 			
+ 	 		{
+				if($flagFecha!=$dato['fecha'] && $ventaxdia > 0){
+					//agregamos el total de la venta por dia
+					echo '<tr>';
+					echo '<td colspan="6" style="text-align:right !important">Total</td>';
+					echo '<td>$'.number_format($ventaxdia).'</td>';
+					echo '</tr>';
+					$ventaxdia = 0;
+				}
+
+				//identificamos las fechas y las agrupamos
+				if($flagFecha!=$dato['fecha']){
+					$flagFecha = $dato['fecha'];
+					echo "<tr style='background-color:lightblue'><td colspan='8'>$flagFecha</td></tr>";
+				}
+
  				if($flag==0)
  				{
  					echo '<tr style="background-color:#F2F2F2" value="'.$dato['no_venta'].'">';
@@ -158,21 +209,28 @@
  				else{
  					echo '<tr value="'.$dato['no_venta'].'">';
  					$flag=0;
- 				} 	 			
+ 				}
  	 			echo '<td>'.$dato['no_venta'].'</td>';
  	 			echo '<td>'.$dato['id_equipo'].'</td>';
  	 			echo '<td>'.$dato['tag'].'</td>'; 	 			
  	 			echo '<td>'.$dato['hora_inicio'].'</td>';
  	 			echo '<td>'.$dato['hora_termino'].'</td>';
- 	 			echo '<td>'.$dato['nota'].'</td>';
+ 	 			echo '<td colspan="1">'.$dato['nota'].'</td>';
  	 			echo '<td>'.$dato['total'].'</td>';
  	 			echo '<td><button class="btn btn-danger" name="eliminar" value="'.$dato['no_venta'].'"><i class="fa fa-trash" aria-hidden="true"></i></td></button>';
  	 			echo '</tr>';
- 	 			$ventatotal+=$dato['total']; 	 			
+				$ventaxdia += $dato['total'];
+ 	 			$ventatotal += $dato['total']; 	 			
  	 		}
+				//total venta por dia
+				echo '<tr>';
+				echo '<td colspan="6" style="text-align:right !important">Total</td>';
+				echo '<td>$'.number_format($ventaxdia).'</td>';
+				echo '</tr>';
  	 			echo '<tr>';
- 	 			echo '<td colspan="6">Total</td>';
- 	 			echo '<td>'.$ventatotal.'</td>'; 	 			
+				//gran total
+ 	 			echo '<td colspan="6" style="text-align:right !important"><b>Venta total:</b></td>';
+ 	 			echo '<td><b>$'.number_format($ventatotal, 2).'</b></td>'; 	 			
  	 			echo '</tr>';
  	 		echo '</table>';
  	 	}

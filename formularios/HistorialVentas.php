@@ -4,9 +4,10 @@ date_default_timezone_set('America/Mexico_City');
 include_once('../clases/CVentas.php');
 include_once("../db/AccessDB.php");
 $venta = new CVentas($db);
- if(isset($_POST['fecha']))
+ if(isset($_POST['fecha_inicial']))
  {    
-    $venta->setFecha($_POST['fecha']);
+    $venta->setFechaInicial($_POST['fecha_inicial']);
+    $venta->setFechaFinal($_POST['fecha_final']);
     $venta->getHistorialVentas();
     $db->close_conn();
  }
