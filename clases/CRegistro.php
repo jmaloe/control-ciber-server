@@ -57,7 +57,7 @@
  	}
 
  	function agregarProducto(){
- 	 	$sql = "INSERT INTO Producto(nombre,descripcion,precio_compra,precio_venta) VALUES('".$this->nombre."','".$this->descripcion."',".$this->precioCompra.",".$this->precioVenta.";";
+ 	 	$sql = "INSERT INTO Producto(nombre,descripcion,precio_compra,precio_venta) VALUES('".$this->nombre."','".$this->descripcion."',".$this->precioCompra.",".$this->precioVenta.");";
  	 	$this->query($sql);
  	 	$this->id_producto = $this->getInsertId();
  	}

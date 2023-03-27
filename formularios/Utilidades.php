@@ -2,12 +2,13 @@
 /*Autor: Jesus Malo, support: dic.malo@gmail.com*/
 
  function getStyles(){ 	
+	$r = rand(0,9999);
  	echo "<link rel='stylesheet' href='../css/bootstrap.min.css'>
 		<link rel='stylesheet' href='../css/bootstrap-theme.min.css'>
 		<link rel='stylesheet' href='../js/jquery-ui-1.11.3.custom/jquery-ui.css'>
 		<link rel='stylesheet' href='../css/openModal.css'>
-		<link rel='stylesheet' href='../css/estilo.css'>
-		<link rel='stylesheet' href='../css/tabs.css'>
+		<link rel='stylesheet' href='../css/estilo.css?r=$r'>
+		<link rel='stylesheet' href='../css/tabs.css?r=$r'>
 		<link rel='stylesheet' href='../css/jquery-ui-timepicker.css'>
 		<link rel='stylesheet' href='../css/font-awesome.min.css'>";
  }

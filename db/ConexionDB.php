@@ -28,7 +28,7 @@ class ConexionDB extends DataReturns {
  	if(mysqli_query($this->conexion, $sql))
     	return true;
 	else
-    	$this->error = mysqli_error($this->conexion);
+    	$this->error = mysqli_error($this->conexion) . " **** ".$sql;
     return false;
  }
 

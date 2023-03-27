@@ -84,13 +84,6 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="1" noreg="8459"><descripcion>Internet</descripcion><cantidad>1</cantidad><total>10</total></producto></prodservs>
-</pc><pc id="18" status="finished">
-    <Tag>LenovoY50-70</Tag>
-    <horaInicio>13:01:05</horaInicio>
-    <horaTermino>14:37:19</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="40" noreg="8559"><descripcion>Acta de Nacimiento</descripcion><cantidad>1</cantidad><total>160</total></producto><producto id="33" noreg="8560"><descripcion>CURP a COLOR</descripcion><cantidad>1</cantidad><total>20</total></producto><producto id="38" noreg="8561"><descripcion>Recibo de luz a COLOR</descripcion><cantidad>1</cantidad><total>15</total></producto><producto id="28" noreg="8562"><descripcion>COPIA</descripcion><cantidad>9</cantidad><total>18</total></producto></prodservs>
 </pc><pc id="19" status="finished">
     <Tag>Papeleria</Tag>
     <horaInicio>16:24:13</horaInicio>
@@ -98,18 +91,25 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="5" noreg="8567"><descripcion>Folder tama&#xF1;o carta</descripcion><cantidad>1</cantidad><total>6</total></producto></prodservs>
-</pc><pc id="17" status="finished">
-    <Tag>Canon G4110</Tag>
-    <horaInicio>14:37:31</horaInicio>
-    <horaTermino>14:37:42</horaTermino>
+</pc><pc id="18" status="finished">
+    <Tag>LenovoY50-70</Tag>
+    <horaInicio>20:35:01</horaInicio>
+    <horaTermino>20:35:19</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="38" noreg="8568"><descripcion>Recibo de luz a COLOR</descripcion><cantidad>2</cantidad><total>30</total></producto><producto id="28" noreg="8569"><descripcion>COPIA</descripcion><cantidad>2</cantidad><total>4</total></producto></prodservs>
+    <producto id="20" noreg="8573"><descripcion>Peli para USB</descripcion><cantidad>2</cantidad><total>30</total></producto></prodservs>
 </pc><pc id="9" status="finished">
     <Tag>HP LaserJet M12</Tag>
-    <horaInicio>14:37:44</horaInicio>
-    <horaTermino>14:37:55</horaTermino>
+    <horaInicio>18:44:55</horaInicio>
+    <horaTermino>18:45:02</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="13" noreg="8570"><descripcion>Copia INE</descripcion><cantidad>1.00</cantidad><total>3</total></producto></prodservs>
+    <producto id="28" noreg="8574"><descripcion>COPIA</descripcion><cantidad>8</cantidad><total>16</total></producto></prodservs>
+</pc><pc id="17" status="finished">
+    <Tag>Canon G4110</Tag>
+    <horaInicio>08:03:09</horaInicio>
+    <horaTermino>08:04:27</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="73" noreg="8577"><descripcion>Foto T/I x Pza.</descripcion><cantidad>2</cantidad><total>10</total></producto></prodservs>
 </pc></equipos>

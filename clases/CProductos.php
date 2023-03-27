@@ -57,10 +57,25 @@
  	}
 
  	function agregarProducto(){
- 	 	$sql = "INSERT INTO Producto(nombre,descripcion,precio_compra,precio_venta) VALUES('".$this->nombre."','".$this->descripcion."',".$this->precioCompra.",".$this->precioVenta.";";
- 	 	$this->query($sql);
+ 	 	$sql = "INSERT INTO Producto(nombre,descripcion,precio_compra,precio_venta) VALUES('".$this->nombre."','".$this->descripcion."',".$this->precioCompra.",".$this->precioVenta.");";
+		$this->query($sql);
  	 	$this->id_producto = $this->getInsertId();
  	}
+
+	function actualizar(){
+		$sql = "UPDATE 
+					Producto 
+				SET 
+					nombre='$this->nombre',
+					descripcion='$this->descripcion',
+					precio_compra=$this->precioCompra,
+					precio_venta=$this->precioVenta 
+				WHERE 
+					id_producto=$this->id_producto;";					
+		if(!$this->update($sql))
+			return false;
+		return true;	
+	}
 
  	function getProductos(){
  	 	$sql = "SELECT id_producto as id, concat(nombre,' $',precio_venta) as value, precio_venta FROM Producto order by nombre";
@@ -77,25 +92,25 @@
  	function getListaPrecios(){
  		$sql = "SELECT id_producto as id, nombre, descripcion, precio_venta FROM Producto order by nombre";
  	 	$resultado = $this->query($sql);
- 	 	$cont=1;
+ 	 	$cont=1;		
  	 	if($resultado){
- 	 		echo '<table width="100%">';
- 	 		echo '<tr>';
+ 	 		echo '<table width="100%" class="data">';
+ 	 		echo '<thead><tr>';
  	 			echo '<th>#</th>';
  	 			echo '<th>ID</th>';
  	 			echo '<th>Nombre</th>';
  	 			echo '<th>Descripcion</th>';
  	 			echo '<th>Precio</th>';
- 	 		echo '</tr>';
+ 	 		echo '</tr></thead>';
  	 	}
  	 	$flag=true;
  	 	while($data = mysqli_fetch_row($resultado)){
  	 		if($flag){
  	 			$flag=false;
- 	 			echo '<tr style="background-color:#F2F2F2">';
+ 	 			echo '<tr style="background-color:#F2F2F2" id="'.$data[0].'">';
  	 		}
  	 		else{
- 	 		  echo '<tr>';
+ 	 		  echo '<tr id="'.$data[0].'">';
  	 		  $flag=true;
  	 		}
  	 			echo '<td>'.$cont.'</td>'; //cns

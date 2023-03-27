@@ -56,13 +56,13 @@
 }
 
 #tab-1 {
- display: block;   
+ /*display: block;   */
 }
 #tab-2{
-    display: none;
+    /*display: none;*/
     margin-top: 42px;
 }
 #tab-3{
-    display:none;
+    /*display:none;*/
     margin-top: 42px;
 }

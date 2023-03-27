@@ -12,12 +12,49 @@
 
  $equipos = new CEquipo($db);
  $productos = new CProductos($db);
+ $tab = isset($_POST['tab']) ? $_POST['tab'] : 1;
+ $notification = "";
+ $producto_encontrado = false;
 
+ //si estamos realizando una busqueda
+ if(isset($_POST['id_articulo']) && $_POST['id_articulo']!="" && !isset($_POST['accion_btn'])){
+	$productos->setIdProducto($_POST['id_articulo']);
+	$productos->findById();
+	$producto_encontrado = true;
+	$tab = 3;
+ }
+ //si estamos guardando o actualizando un producto
+ else if(isset($_POST['nombre_producto']) && 
+ 	isset($_POST['descripcion_producto']) &&
+	 $_POST['nombre_producto'] != "" &&
+	 $_POST['descripcion_producto'] !=" "
+   ){
+	
+	$productos->setNombre($_POST['nombre_producto']);
+	$productos->setDescripcion($_POST['descripcion_producto']);
+	$productos->setPrecioCompra($_POST['pcompra_producto']?$_POST['pcompra_producto']:0);
+	$productos->setPrecioVenta($_POST['pventa_producto']?$_POST['pventa_producto']:0);
+	if($_POST['accion_btn']=="agregar"){
+		$productos->agregarProducto();
+		$notification = "Producto agregado correctamente: ".$productos->getIdProducto()." - ".$_POST['nombre_producto']." ".$_POST['descripcion_producto'];		
+	}
+	else if($_POST['accion_btn']=="actualizar"){
+		$productos->setIdProducto($_POST['id_articulo']);		
+		if(!$productos->actualizar())
+			$notification = $productos->getError();
+		else
+			$notification = "Producto actualizado: [".$productos->getIdProducto().":".$_POST['nombre_producto'].", ".$_POST['descripcion_producto'].", ".$productos->getPrecioCompra().", ".$productos->getPrecioVenta()."]";
+	}	
+	$tab = 3;	
+ }
+ 
  if(isset($_GET['eliminar'])){
  	require_once("../clases/CVentas.php");
  	$obj = new CVentas($db);
  	$obj->setNoVenta($_GET['eliminar']);
- 	$obj->eliminarVenta();
+ 	$obj->eliminarVenta();	
+	$notification = "Venta eliminada:".$_GET['eliminar'];
+	$tab = 2;
  }
 
  
@@ -40,7 +77,7 @@
   			Tu navegador no soporta el elemento de audio
 		</audio>
 		<div id="container">		
-			<form name="registroventas" id="RegistroVentas">
+			<form name="registroventas" id="RegistroVentas" method="POST">
 				<div class="panel panel-primary">
 				    <div class="panel-heading">
 				    	Formulario de Registro de Ventas
@@ -49,18 +86,18 @@
 					<div class="panel-body">
 						
 						<ul class="tabs-menu">
-							<li id="tab1" class="current">
+							<li id="tab1" <?php echo $tab==1?"class='current'":"" ?>>
 								<a href="#tab-1" class="goTab" value="1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Venta</a>
 							</li>			
-							<li id="tab2">
+							<li id="tab2" <?php echo $tab==2?"class='current'":"" ?>>
 								<a href="#tab-2" class="goTab" value="2"><i class="fa fa-history" aria-hidden="true"></i> Historial</a>
 							</li>
-							<li id="tab3">
-								<a href="#tab-3" class="goTab" value="3"><i class="fa fa-tags" aria-hidden="true"></i> Precios</a>
+							<li id="tab3" <?php echo $tab==3?"class='current'":"" ?>>
+								<a href="#tab-3" class="goTab" value="3"><i class="fa fa-tags" aria-hidden="true"></i> Productos</a>
 							</li>
 						</ul>						
 						
-						<div id="tab-1" class="tab-content">
+						<div id="tab-1" class="tab-content" <?php echo $tab!=1?"style='display:none'":""; ?>>
 							<div class="form-group" id="equipos">
 								<?php
 									echo '<label>Equipos disponibles <i class="fa fa-hand-o-down" aria-hidden="true"></i></label>';
@@ -94,20 +131,59 @@
 								?>
 							</datalist>
 						</div>
-						<div id="tab-2" class="tab-content">
+						<div id="tab-2" class="tab-content" <?php echo $tab!=2?"style='display:none'":""; ?>>
 							<div id="date">
 								<input type="date" id="fecha_consulta_i">
 								⇒ <input type="date" id="fecha_consulta_f">
 								<button type="button" class="btn btn-success btn_consultar_historial" value="2">Consultar</button>
 							</div>
+							<?php
+								if($notification!="")
+								echo "<div class='alert alert-success' role='alert'>
+										$notification
+							  		  </div>";
+							?>
 							<div id="HistorialVentas">
 
 							</div>
 						</div>
-						<div id="tab-3" class="tab-content">							
-							<div id="ListaPrecios">
+						<div id="tab-3" class="tab-content" <?php echo $tab!=3?"style='display:none'":""; ?>>
+							<?php
+								if($notification!="")
+								echo "<div class='alert alert-success' role='alert'>
+										$notification
+							  		  </div>";
+							?>							
+							<div id="AgregarProducto">
+ 								<div class="row">
+									<div class="col-lg-3 col-md-6 col-sm-12">
+										<input type="text" name="nombre_producto" class="form-control" placeholder="Producto" <?php echo $producto_encontrado ? "value='".$productos->getNombre()."'":"" ?>/>
+									</div>
+									<div class="col-lg-3 col-md-6 col-sm-12">
+										<input type="text" name="descripcion_producto" class="form-control" placeholder="Descripcion" <?php echo $producto_encontrado ? "value='".$productos->getDescripcion()."'":"" ?> />
+									</div>
+									<div class="col-lg-2 col-md-6 col-sm-12">
+										<input type="number" name="pcompra_producto" class="form-control" placeholder="Precio compra" <?php echo $producto_encontrado ? "value='".$productos->getPrecioCompra()."'":"" ?> />
+									</div>
+									<div class="col-lg-2 col-md-6 col-sm-12">
+										<input type="number" name="pventa_producto" class="form-control" placeholder="Precio venta" <?php echo $producto_encontrado ? "value='".$productos->getPrecioVenta()."'":"" ?> />
+									</div>
+									<div>
 
+										<button 
+											type="submit" 
+											class="btn btn-success" 
+											name="accion_btn" 
+											value=<?php echo $producto_encontrado ? "'actualizar'":"'agregar'" ?>>
+											<?php 
+												echo $producto_encontrado ? '<i class="fa fa-refresh" aria-hidden="true"></i>' : '<i class="fa fa-floppy-o"></i>';
+											?>											
+										</button>
+									</div>
+								</div>									
 							</div>
+							<div id="ListaPrecios"> </div>
+							<input type="hidden" name="id_articulo" id="id_articulo" value=<?php echo $producto_encontrado ? $productos->getIdProducto():"" ?>>
 						</div>
 					</div>
 				</div>	  
@@ -177,19 +253,59 @@ $(document).ready(function() {
 		  },
 		  dataType: "html"
 		});
+	}	
+
+	var listaPConsultada = false;
+	function consultaListaPrecios(){
+		if(!listaPConsultada){
+			$.ajax({
+			  type: "POST", //id_producto,cantidad,precio,total, cnsdv+
+			  url: "ListaPrecios.php",
+			  data: {"accion":"consultar"},
+			  success: function(result){
+				  $("#ListaPrecios").html(result);
+				addTableTabs();
+			  },
+			  dataType: "html"
+			});
+			listaPConsultada = true;
+		}
 	}
 
-	function consultaListaPrecios(){
-		$.ajax({
-		  type: "POST", //id_producto,cantidad,precio,total, cnsdv+
-		  url: "ListaPrecios.php",
-		  data: {"accion":"consultar"},
-		  success: function(result){
-		  	$("#ListaPrecios").html(result);		  	
-		  },
-		  dataType: "html"
-		});	
+	var tabsCreados = false;
+	function addTableTabs(){
+		if(!tabsCreados){
+			//INICIA PAGINACION DE TABLA
+			$('#ListaPrecios').after('<div>Página:</div><div id="nav"></div>');
+				var rowsShown = 20;
+				var rowsTotal = $('#ListaPrecios .data tbody tr').length;
+				var numPages = rowsTotal/rowsShown;
+				for(i = 0;i < numPages;i++) {
+					var pageNum = i + 1;
+					$('#nav').append('<a href="#" rel="'+i+'">'+pageNum+'</a> ');
+				}
+				$('#ListaPrecios .data tbody tr').hide();
+				$('#ListaPrecios .data tbody tr').slice(0, rowsShown).show();
+				$('#nav a:first').addClass('active');
+				$('#nav a').bind('click', function(){
+	
+					$('#nav a').removeClass('active');
+					$(this).addClass('active');
+					var currPage = $(this).attr('rel');
+					var startItem = currPage * rowsShown;
+					var endItem = startItem + rowsShown;
+					$('#ListaPrecios .data tbody tr').css('opacity','0.0').hide().slice(startItem, endItem).
+					css('display','table-row').animate({opacity:1}, 300);
+				});
+				//FIN PAGINACION
+			tabsCreados = true;	
+		}
 	}
+	
+	$("#ListaPrecios").on('click','tr',function(){
+		$("#id_articulo").val($(this).attr("id"));
+		$("#RegistroVentas").submit();
+	});
 
 	/*Ajustar el container al 100% si la pantalla es grande*/	
 	if( $(window).width()>800 ){
@@ -665,7 +781,6 @@ $(document).ready(function() {
 
 	  }
 
-	}
-
+	}	
 });
 </script>
