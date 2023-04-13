@@ -80,7 +80,7 @@
 			<form name="registroventas" id="RegistroVentas" method="POST">
 				<div class="panel panel-primary">
 				    <div class="panel-heading">
-				    	Formulario de Registro de Ventas
+				    	Formulario de Registro de Ventas						
 				    </div>
 			    
 					<div class="panel-body">
@@ -193,7 +193,15 @@
 			</div>
 		<?php echo getHomeButton(); ?>
 		<footer>Servicios JM 2023 - By: dic.malo@gmail.com</footer>
-		</div>
+		<label style="color:white">
+		<?php 
+			$exec = 'ipconfig | findstr /R /C:"IPv4.*"';
+			exec($exec, $output);							
+			foreach($output as $key => $value)
+				echo explode(":",$value)[1]."<br>";			
+		?>
+		</label>
+		</div>				
 	</body>
 </html>
 <?php

@@ -84,32 +84,32 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="1" noreg="8459"><descripcion>Internet</descripcion><cantidad>1</cantidad><total>10</total></producto></prodservs>
-</pc><pc id="19" status="finished">
-    <Tag>Papeleria</Tag>
-    <horaInicio>16:24:13</horaInicio>
-    <horaTermino>16:24:21</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="5" noreg="8567"><descripcion>Folder tama&#xF1;o carta</descripcion><cantidad>1</cantidad><total>6</total></producto></prodservs>
-</pc><pc id="18" status="finished">
-    <Tag>LenovoY50-70</Tag>
-    <horaInicio>20:35:01</horaInicio>
-    <horaTermino>20:35:19</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="20" noreg="8573"><descripcion>Peli para USB</descripcion><cantidad>2</cantidad><total>30</total></producto></prodservs>
 </pc><pc id="9" status="finished">
     <Tag>HP LaserJet M12</Tag>
-    <horaInicio>18:44:55</horaInicio>
-    <horaTermino>18:45:02</horaTermino>
+    <horaInicio>16:49:22</horaInicio>
+    <horaTermino>16:49:30</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="28" noreg="8574"><descripcion>COPIA</descripcion><cantidad>8</cantidad><total>16</total></producto></prodservs>
+    <producto id="13" noreg="8629"><descripcion>Copia INE</descripcion><cantidad>2</cantidad><total>6</total></producto></prodservs>
+</pc><pc id="19" status="finished">
+    <Tag>Papeleria</Tag>
+    <horaInicio>14:02:25</horaInicio>
+    <horaTermino>14:02:45</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="5" noreg="8640"><descripcion>Folder tama&#xF1;o carta</descripcion><cantidad>1</cantidad><total>6</total></producto></prodservs>
+</pc><pc id="18" status="finished">
+    <Tag>LenovoY50-70</Tag>
+    <horaInicio>09:41:47</horaInicio>
+    <horaTermino>09:42:58</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="75" noreg="8642"><descripcion>Bur&#xF3; de cr&#xE9;dito</descripcion><cantidad>1</cantidad><total>60</total></producto></prodservs>
 </pc><pc id="17" status="finished">
     <Tag>Canon G4110</Tag>
-    <horaInicio>08:03:09</horaInicio>
-    <horaTermino>08:04:27</horaTermino>
+    <horaInicio>10:27:51</horaInicio>
+    <horaTermino>10:28:00</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="73" noreg="8577"><descripcion>Foto T/I x Pza.</descripcion><cantidad>2</cantidad><total>10</total></producto></prodservs>
+    <producto id="13" noreg="8644"><descripcion>Copia INE</descripcion><cantidad>1.00</cantidad><total>3</total></producto></prodservs>
 </pc></equipos>
