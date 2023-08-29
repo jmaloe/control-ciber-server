@@ -491,7 +491,7 @@ $(document).ready(function() {
 						'<input list="articulos" class="seleccion-articulo form-control" autocomplete="off" value="'+data.artDefault+'">'+
 					'</div>'+
 					'<div class="dos">'+
-						'<input type="number" class="cantidad" value="'+data.cantidad+'" min="0" max="999">'+
+						'<input type="number" class="cantidad" value="'+data.cantidad+'" min="0" max="999" title="Enter para agregar otro articulo">'+
 					'</div>'+
 					'<div class="dos">'+
 						'<input type="number" class="precio" value="'+data.precio+'" min="0" max="999"/>'+
@@ -548,7 +548,13 @@ $(document).ready(function() {
 		actualizarDetalleVentaEnDB({"cnsdv":$(parent).attr("no_registro"),"id_equipo":$(parent).parent().parent().attr("id"),"id_producto":id_producto,"cantidad":cantidad,"precio":precio,"total":cantidad*precio});
 	});
 
-	$("#equipos").on('change','.cantidad',function(){
+	$("#equipos").keypress('.cantidad', function(event){
+		if (event.which === 13) {
+        	$("#equipos .agregar-articulo").trigger('click');
+    	}
+	});
+
+	$("#equipos").on('change','.cantidad',function(event){		
 		var parent = $(this).parent().parent();
 		var precio = $(parent).find(".precio").val();
 		var id_producto = getValorEnDataList($(parent).find(".seleccion-articulo").val(),"id");

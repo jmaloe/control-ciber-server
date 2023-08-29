@@ -77,39 +77,39 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="28" noreg="0"><descripcion/><cantidad>1</cantidad><total>0</total></producto><producto id="3" noreg="14"><descripcion>Impresion a Color</descripcion><cantidad>1</cantidad><total>30</total></producto><producto id="3" noreg="15"><descripcion>Impresion a Color</descripcion><cantidad>1</cantidad><total>35</total></producto></prodservs>
-</pc><pc id="7" status="finished">
-    <Tag>Wifi 01</Tag>
-    <horaInicio>10:00:46</horaInicio>
-    <horaTermino>12:39:02</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="1" noreg="8459"><descripcion>Internet</descripcion><cantidad>1</cantidad><total>10</total></producto></prodservs>
-</pc><pc id="9" status="finished">
-    <Tag>HP LaserJet M12</Tag>
-    <horaInicio>16:49:22</horaInicio>
-    <horaTermino>16:49:30</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="13" noreg="8629"><descripcion>Copia INE</descripcion><cantidad>2</cantidad><total>6</total></producto></prodservs>
 </pc><pc id="19" status="finished">
     <Tag>Papeleria</Tag>
-    <horaInicio>14:02:25</horaInicio>
-    <horaTermino>14:02:45</horaTermino>
+    <horaInicio>21:51:54</horaInicio>
+    <horaTermino>21:52:02</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="5" noreg="8640"><descripcion>Folder tama&#xF1;o carta</descripcion><cantidad>1</cantidad><total>6</total></producto></prodservs>
+    <producto id="5" noreg="9307"><descripcion>Folder tama&#xF1;o carta</descripcion><cantidad>1</cantidad><total>6</total></producto></prodservs>
+</pc><pc id="7" status="finished">
+    <Tag>Wifi 01</Tag>
+    <horaInicio>10:56:52</horaInicio>
+    <horaTermino>10:57:51</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="33" noreg="9649"><descripcion>CURP a COLOR</descripcion><cantidad>1</cantidad><total>20</total></producto><producto id="28" noreg="9650"><descripcion>COPIA</descripcion><cantidad>4</cantidad><total>8</total></producto></prodservs>
 </pc><pc id="18" status="finished">
     <Tag>LenovoY50-70</Tag>
-    <horaInicio>09:41:47</horaInicio>
-    <horaTermino>09:42:58</horaTermino>
+    <horaInicio>08:58:28</horaInicio>
+    <horaTermino>09:16:05</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="75" noreg="8642"><descripcion>Bur&#xF3; de cr&#xE9;dito</descripcion><cantidad>1</cantidad><total>60</total></producto></prodservs>
+    <producto id="86" noreg="9702"><descripcion>Constancia vigencia derechos IMSS</descripcion><cantidad>1</cantidad><total>20</total></producto></prodservs>
+</pc><pc id="9" status="running">
+    <Tag>HP LaserJet M12</Tag>
+    <horaInicio>09:16:11</horaInicio>
+    <horaTermino>00:00:00</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="13" noreg="9704"><descripcion>Copia INE</descripcion><cantidad>2</cantidad><total>6</total></producto><producto id="88" noreg="9705"><descripcion>Copia a COLOR</descripcion><cantidad>2</cantidad><total>10</total></producto><producto id="28" noreg="9703"><descripcion>COPIA</descripcion><cantidad>18</cantidad><total>36</total></producto><producto id="28" noreg="9706"><descripcion>COPIA</descripcion><cantidad>1</cantidad><total>2</total></producto></prodservs>
 </pc><pc id="17" status="finished">
     <Tag>Canon G4110</Tag>
-    <horaInicio>10:27:51</horaInicio>
-    <horaTermino>10:28:00</horaTermino>
+    <horaInicio>09:40:25</horaInicio>
+    <horaTermino>09:40:45</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="13" noreg="8644"><descripcion>Copia INE</descripcion><cantidad>1.00</cantidad><total>3</total></producto></prodservs>
+    <producto id="88" noreg="9707"><descripcion>Copia a COLOR</descripcion><cantidad>1.00</cantidad><total>5</total></producto></prodservs>
 </pc></equipos>

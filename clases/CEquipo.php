@@ -196,7 +196,7 @@
 							<input list="articulos" class="seleccion-articulo form-control" autocomplete="off" value="'.$dato['nombre'].'" '.$idProductoIsOne.'>
 						</div>
 						<div class="dos">
-							<input type="number" class="cantidad" value="'.$dato['cantidad'].'" '.$idProductoIsOne.'>
+							<input type="number" class="cantidad" value="'.$dato['cantidad'].'" '.$idProductoIsOne.' title="Enter para agregar mas articulos">
 						</div>
 						<div class="dos">
 							<input type="number" class="precio" value="'.$dato['precio_unitario'].'" '.$idProductoIsOne.'/>
