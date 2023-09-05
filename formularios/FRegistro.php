@@ -233,7 +233,8 @@ $(document).ready(function() {
     	$("#tab"+$(this).attr("value")).addClass("current");    
     	var tab = $(this).attr("href");
     	$(".tab-content").not(tab).css("display", "none");
-    	$(tab).fadeIn();    	
+    	$(tab).fadeIn();
+		
     	if($(this).attr("value")==2)
 			consultaHistorial();
 		else if($(this).attr("value")==3)
@@ -285,7 +286,7 @@ $(document).ready(function() {
 		if(!tabsCreados){
 			//INICIA PAGINACION DE TABLA
 			$('#ListaPrecios').after('<div>Página:</div><div id="nav"></div>');
-				var rowsShown = 20;
+				var rowsShown = 25;
 				var rowsTotal = $('#ListaPrecios .data tbody tr').length;
 				var numPages = rowsTotal/rowsShown;
 				for(i = 0;i < numPages;i++) {
@@ -403,18 +404,53 @@ $(document).ready(function() {
 			  		var data = null;			  		
 			  		//Agregamos atributo no_venta con valor x 
 			  		$(nodo).attr('no_venta',$.trim(result)); 
-			  		//Ponemos por default un producto de acuerdo al tipo de equipo	  		
+			  		//Ponemos por default un producto de acuerdo al tipo de equipo
+					//Impresora a color
 			  		if($(nodo).attr("categoria")==4){						
-						var precio_venta = getValorEnDataListByID(28,"precio_venta");
-						data = {"id_equipo":id_equipo,"no_venta":$.trim(result),"id_producto":"28","cantidad":"1","precio":precio_venta,"total":precio_venta,"artDefault":getValorEnDataListByID(28,"value")};
+						var precio_venta = getValorEnDataListByID(3,"precio_venta");
+						data = {"id_equipo":id_equipo,
+								"no_venta":$.trim(result),
+								"id_producto":"3",
+								"cantidad":"1",
+								"precio":precio_venta,
+								"total":precio_venta,
+								"artDefault":getValorEnDataListByID(3,"value")
+							};
 					}
-					/*else if($(nodo).attr("categoria")==3){
-						var precio_venta = getValorEnDataListByID(2,"precio_venta");
-						data = {"id_equipo":id_equipo,"no_venta":$.trim(result),"id_producto":"28","cantidad":"1","precio":precio_venta,"total":precio_venta,"artDefault":getValorEnDataListByID(2,"value")};
-					}*/
+					//papeleria
+					else if($(nodo).attr("categoria")==5){
+						var precio_venta = getValorEnDataListByID(5,"precio_venta");
+						data = {"id_equipo":id_equipo,
+								"no_venta":$.trim(result),
+								"id_producto":"5",
+								"cantidad":"1",
+								"precio":precio_venta,
+								"total":precio_venta,
+								"artDefault":getValorEnDataListByID(5,"value")
+							};
+					}
+					//impresora a B&N
+					else if($(nodo).attr("categoria")==6){
+						var precio_venta = getValorEnDataListByID(28,"precio_venta");
+						data = {"id_equipo":id_equipo,
+								"no_venta":$.trim(result),
+								"id_producto":"28",
+								"cantidad":"1",
+								"precio":precio_venta,
+								"total":precio_venta,
+								"artDefault":getValorEnDataListByID(28,"value")
+							};
+					}
 					else{
 						var precio_venta = getValorEnDataListByID(1,"precio_venta");
-						data = {"id_equipo":id_equipo,"no_venta":$.trim(result),"id_producto":"1","cantidad":"1","precio":precio_venta,"total":precio_venta,"artDefault":getValorEnDataListByID(1,"value")};
+						data = {"id_equipo":id_equipo,
+								"no_venta":$.trim(result),
+								"id_producto":"1",
+								"cantidad":"1",
+								"precio":precio_venta,
+								"total":precio_venta,
+								"artDefault":getValorEnDataListByID(1,"value")
+						};
 					}
 					agregarDetalleVentaEnDB( $("#prodsxeq_"+id_equipo), data);					
 			  },

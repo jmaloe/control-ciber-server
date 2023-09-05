@@ -77,39 +77,39 @@
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
     <producto id="28" noreg="0"><descripcion/><cantidad>1</cantidad><total>0</total></producto><producto id="3" noreg="14"><descripcion>Impresion a Color</descripcion><cantidad>1</cantidad><total>30</total></producto><producto id="3" noreg="15"><descripcion>Impresion a Color</descripcion><cantidad>1</cantidad><total>35</total></producto></prodservs>
-</pc><pc id="19" status="finished">
-    <Tag>Papeleria</Tag>
-    <horaInicio>21:51:54</horaInicio>
-    <horaTermino>21:52:02</horaTermino>
-    <tiempoRestante>&#x221E;</tiempoRestante>
-    <prodservs>
-    <producto id="5" noreg="9307"><descripcion>Folder tama&#xF1;o carta</descripcion><cantidad>1</cantidad><total>6</total></producto></prodservs>
 </pc><pc id="7" status="finished">
     <Tag>Wifi 01</Tag>
-    <horaInicio>10:56:52</horaInicio>
-    <horaTermino>10:57:51</horaTermino>
+    <horaInicio>14:37:55</horaInicio>
+    <horaTermino>14:38:15</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="33" noreg="9649"><descripcion>CURP a COLOR</descripcion><cantidad>1</cantidad><total>20</total></producto><producto id="28" noreg="9650"><descripcion>COPIA</descripcion><cantidad>4</cantidad><total>8</total></producto></prodservs>
+    <producto id="69" noreg="9791"><descripcion>Soporte t&#xE9;cnico</descripcion><cantidad>1</cantidad><total>50</total></producto></prodservs>
 </pc><pc id="18" status="finished">
     <Tag>LenovoY50-70</Tag>
-    <horaInicio>08:58:28</horaInicio>
-    <horaTermino>09:16:05</horaTermino>
+    <horaInicio>13:12:21</horaInicio>
+    <horaTermino>13:15:58</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="86" noreg="9702"><descripcion>Constancia vigencia derechos IMSS</descripcion><cantidad>1</cantidad><total>20</total></producto></prodservs>
-</pc><pc id="9" status="running">
+    <producto id="40" noreg="9840"><descripcion>Acta de Nacimiento</descripcion><cantidad>1</cantidad><total>160</total></producto><producto id="33" noreg="9841"><descripcion>CURP a COLOR</descripcion><cantidad>1</cantidad><total>20</total></producto><producto id="28" noreg="9842"><descripcion>COPIA</descripcion><cantidad>2</cantidad><total>4</total></producto><producto id="44" noreg="9843"><descripcion>Impresion a Color T/Carta</descripcion><cantidad>1</cantidad><total>10</total></producto></prodservs>
+</pc><pc id="19" status="finished">
+    <Tag>Papeleria</Tag>
+    <horaInicio>16:15:36</horaInicio>
+    <horaTermino>16:32:11</horaTermino>
+    <tiempoRestante>&#x221E;</tiempoRestante>
+    <prodservs>
+    <producto id="5" noreg="9844"><descripcion>Folder tama&#xF1;o carta</descripcion><cantidad>2</cantidad><total>12</total></producto></prodservs>
+</pc><pc id="9" status="finished">
     <Tag>HP LaserJet M12</Tag>
-    <horaInicio>09:16:11</horaInicio>
-    <horaTermino>00:00:00</horaTermino>
+    <horaInicio>17:19:35</horaInicio>
+    <horaTermino>17:19:40</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="13" noreg="9704"><descripcion>Copia INE</descripcion><cantidad>2</cantidad><total>6</total></producto><producto id="88" noreg="9705"><descripcion>Copia a COLOR</descripcion><cantidad>2</cantidad><total>10</total></producto><producto id="28" noreg="9703"><descripcion>COPIA</descripcion><cantidad>18</cantidad><total>36</total></producto><producto id="28" noreg="9706"><descripcion>COPIA</descripcion><cantidad>1</cantidad><total>2</total></producto></prodservs>
+    <producto id="28" noreg="9849"><descripcion>COPIA</descripcion><cantidad>1</cantidad><total>2.00</total></producto></prodservs>
 </pc><pc id="17" status="finished">
     <Tag>Canon G4110</Tag>
-    <horaInicio>09:40:25</horaInicio>
-    <horaTermino>09:40:45</horaTermino>
+    <horaInicio>17:30:30</horaInicio>
+    <horaTermino>17:30:36</horaTermino>
     <tiempoRestante>&#x221E;</tiempoRestante>
     <prodservs>
-    <producto id="88" noreg="9707"><descripcion>Copia a COLOR</descripcion><cantidad>1.00</cantidad><total>5</total></producto></prodservs>
+    <producto id="3" noreg="9850"><descripcion>Impresion a Color</descripcion><cantidad>1</cantidad><total>5.00</total></producto></prodservs>
 </pc></equipos>
