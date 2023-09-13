@@ -13,7 +13,8 @@
  $equipos = new CEquipo($db);
  $productos = new CProductos($db);
  $tab = isset($_POST['tab']) ? $_POST['tab'] : 1;
- $notification = "";
+ $notification_producto = "";
+ $notification_eliminacion = "";
  $producto_encontrado = false;
 
  //si estamos realizando una busqueda
@@ -36,14 +37,15 @@
 	$productos->setPrecioVenta($_POST['pventa_producto']?$_POST['pventa_producto']:0);
 	if($_POST['accion_btn']=="agregar"){
 		$productos->agregarProducto();
-		$notification = "Producto agregado correctamente: ".$productos->getIdProducto()." - ".$_POST['nombre_producto']." ".$_POST['descripcion_producto'];		
+		$producto_encontrado = false;
+		$notification_producto = "Producto agregado correctamente: ".$productos->getIdProducto()." - ".$_POST['nombre_producto']." ".$_POST['descripcion_producto'];		
 	}
 	else if($_POST['accion_btn']=="actualizar"){
 		$productos->setIdProducto($_POST['id_articulo']);		
 		if(!$productos->actualizar())
-			$notification = $productos->getError();
+			$notification_producto = $productos->getError();
 		else
-			$notification = "Producto actualizado: [".$productos->getIdProducto().":".$_POST['nombre_producto'].", ".$_POST['descripcion_producto'].", ".$productos->getPrecioCompra().", ".$productos->getPrecioVenta()."]";
+			$notification_producto = "Producto actualizado: [".$productos->getIdProducto().":".$_POST['nombre_producto'].", ".$_POST['descripcion_producto'].", ".$productos->getPrecioCompra().", ".$productos->getPrecioVenta()."]";
 	}	
 	$tab = 3;	
  }
@@ -53,7 +55,7 @@
  	$obj = new CVentas($db);
  	$obj->setNoVenta($_GET['eliminar']);
  	$obj->eliminarVenta();	
-	$notification = "Venta eliminada:".$_GET['eliminar'];
+	$notification_eliminacion = "Venta eliminada:".$_GET['eliminar'];
 	$tab = 2;
  }
 
@@ -138,9 +140,9 @@
 								<button type="button" class="btn btn-success btn_consultar_historial" value="2">Consultar</button>
 							</div>
 							<?php
-								if($notification!="")
+								if($notification_eliminacion!="")
 								echo "<div class='alert alert-success' role='alert'>
-										$notification
+										$notification_eliminacion
 							  		  </div>";
 							?>
 							<div id="HistorialVentas">
@@ -149,9 +151,9 @@
 						</div>
 						<div id="tab-3" class="tab-content" <?php echo $tab!=3?"style='display:none'":""; ?>>
 							<?php
-								if($notification!="")
+								if($notification_producto!="")
 								echo "<div class='alert alert-success' role='alert'>
-										$notification
+										$notification_producto
 							  		  </div>";
 							?>							
 							<div id="AgregarProducto">
@@ -163,10 +165,10 @@
 										<input type="text" name="descripcion_producto" class="form-control" placeholder="Descripcion" <?php echo $producto_encontrado ? "value='".$productos->getDescripcion()."'":"" ?> />
 									</div>
 									<div class="col-lg-2 col-md-6 col-sm-12">
-										<input type="number" name="pcompra_producto" class="form-control" placeholder="Precio compra" <?php echo $producto_encontrado ? "value='".$productos->getPrecioCompra()."'":"" ?> />
+										<input type="number" name="pcompra_producto" class="form-control" placeholder="Precio compra" <?php echo $producto_encontrado ? "value='".$productos->getPrecioCompra()."'":"" ?> step="any"/>
 									</div>
 									<div class="col-lg-2 col-md-6 col-sm-12">
-										<input type="number" name="pventa_producto" class="form-control" placeholder="Precio venta" <?php echo $producto_encontrado ? "value='".$productos->getPrecioVenta()."'":"" ?> />
+										<input type="number" name="pventa_producto" class="form-control" placeholder="Precio venta" <?php echo $producto_encontrado ? "value='".$productos->getPrecioVenta()."'":"" ?> step="any"/>
 									</div>
 									<div>
 
@@ -280,6 +282,8 @@ $(document).ready(function() {
 			listaPConsultada = true;
 		}
 	}
+
+	consultaListaPrecios();
 
 	var tabsCreados = false;
 	function addTableTabs(){
