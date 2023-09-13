@@ -217,7 +217,7 @@
  	 			echo '<td>'.$dato['hora_termino'].'</td>';
  	 			echo '<td colspan="1">'.$dato['nota'].'</td>';
  	 			echo '<td>'.$dato['total'].'</td>';
- 	 			echo '<td><button class="btn btn-danger" name="eliminar" value="'.$dato['no_venta'].'"><i class="fa fa-trash" aria-hidden="true"></i></td></button>';
+ 	 			echo '<td><button type="submit" class="btn btn-danger" name="eliminar" value="'.$dato['no_venta'].'"><i class="fa fa-trash" aria-hidden="true"></i></td></button>';
  	 			echo '</tr>';
 				$ventaxdia += $dato['total'];
  	 			$ventatotal += $dato['total']; 	 			

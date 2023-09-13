@@ -17,6 +17,16 @@
  $notification_eliminacion = "";
  $producto_encontrado = false;
 
+ //si se esta eliminando una venta
+ if(isset($_POST['eliminar'])){
+	require_once("../clases/CVentas.php");
+	$obj = new CVentas($db);
+	$obj->setNoVenta($_POST['eliminar']);
+	$obj->eliminarVenta();	
+   $notification_eliminacion = "Venta eliminada:".$_POST['eliminar'];
+   $tab = 2;
+ }
+
  //si estamos realizando una busqueda
  if(isset($_POST['id_articulo']) && $_POST['id_articulo']!="" && !isset($_POST['accion_btn'])){
 	$productos->setIdProducto($_POST['id_articulo']);
@@ -49,17 +59,6 @@
 	}	
 	$tab = 3;	
  }
- 
- if(isset($_GET['eliminar'])){
- 	require_once("../clases/CVentas.php");
- 	$obj = new CVentas($db);
- 	$obj->setNoVenta($_GET['eliminar']);
- 	$obj->eliminarVenta();	
-	$notification_eliminacion = "Venta eliminada:".$_GET['eliminar'];
-	$tab = 2;
- }
-
- 
 ?>
 <!DOCTYPE html>
 <html lang="es">
