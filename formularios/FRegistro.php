@@ -18,27 +18,30 @@
  $producto_encontrado = false;
 
  //si se esta eliminando una venta
- if(isset($_POST['eliminar'])){
+ if(isset($_POST['eliminar']) && $tab==2){
 	require_once("../clases/CVentas.php");
 	$obj = new CVentas($db);
 	$obj->setNoVenta($_POST['eliminar']);
 	$obj->eliminarVenta();	
-   $notification_eliminacion = "Venta eliminada:".$_POST['eliminar'];
-   $tab = 2;
+   $notification_eliminacion = "Venta eliminada:".$_POST['eliminar'];   
  }
 
- //si estamos realizando una busqueda
- if(isset($_POST['id_articulo']) && $_POST['id_articulo']!="" && !isset($_POST['accion_btn'])){
+ //si estamos realizando una busqueda de articulo para modificarlo
+ if( isset( $_POST['id_articulo'] ) && 
+ 			$_POST['id_articulo'] != "" && 
+			!isset($_POST['accion_btn']) &&
+ 			$tab==3
+			){
 	$productos->setIdProducto($_POST['id_articulo']);
 	$productos->findById();
-	$producto_encontrado = true;
-	$tab = 3;
+	$producto_encontrado = true;	
  }
  //si estamos guardando o actualizando un producto
  else if(isset($_POST['nombre_producto']) && 
  	isset($_POST['descripcion_producto']) &&
 	 $_POST['nombre_producto'] != "" &&
-	 $_POST['descripcion_producto'] !=" "
+	 $_POST['descripcion_producto'] !=" " &&
+ 	 $tab==3
    ){
 	
 	$productos->setNombre($_POST['nombre_producto']);
@@ -57,7 +60,6 @@
 		else
 			$notification_producto = "Producto actualizado: [".$productos->getIdProducto().":".$_POST['nombre_producto'].", ".$_POST['descripcion_producto'].", ".$productos->getPrecioCompra().", ".$productos->getPrecioVenta()."]";
 	}	
-	$tab = 3;	
  }
 ?>
 <!DOCTYPE html>
@@ -87,6 +89,7 @@
 					<div class="panel-body">
 						
 						<ul class="tabs-menu">
+							<input type="hidden" name="tab" value="<?php echo $tab; ?>" id="tab"/>
 							<li id="tab1" <?php echo $tab==1?"class='current'":"" ?>>
 								<a href="#tab-1" class="goTab" value="1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Venta</a>
 							</li>			
@@ -158,10 +161,10 @@
 							<div id="AgregarProducto">
  								<div class="row">
 									<div class="col-lg-3 col-md-6 col-sm-12">
-										<input type="text" name="nombre_producto" class="form-control" placeholder="Producto" <?php echo $producto_encontrado ? "value='".$productos->getNombre()."'":"" ?>/>
+										<input type="text" name="nombre_producto" id="input_nombre_producto" class="form-control" placeholder="Nombre del producto | Búsqueda" <?php echo $producto_encontrado ? "value='".$productos->getNombre()."'":"" ?> autocomplete="off"/>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
-										<input type="text" name="descripcion_producto" class="form-control" placeholder="Descripcion" <?php echo $producto_encontrado ? "value='".$productos->getDescripcion()."'":"" ?> />
+										<input type="text" name="descripcion_producto" class="form-control" placeholder="Descripción [pz, hj, lb,pack, etc.]" <?php echo $producto_encontrado ? "value='".$productos->getDescripcion()."'":"" ?> />
 									</div>
 									<div class="col-lg-2 col-md-6 col-sm-12">
 										<input type="number" name="pcompra_producto" class="form-control" placeholder="Precio compra" <?php echo $producto_encontrado ? "value='".$productos->getPrecioCompra()."'":"" ?> step="any"/>
@@ -212,7 +215,16 @@
 
 <!--script src="../js/utilidades_registro.js"></script-->
 <script>
-$(document).ready(function() {	
+$(document).ready(function() {
+	$("#input_nombre_producto").on("keyup", function(event){		
+		if($(this).val()!=""){
+			var value = $(this).val().toLowerCase();
+			$("#ListaPrecios .data > tbody > tr").filter(function() { 
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		}
+	});
+
 	$("#HistorialVentas").on("click","tr",function(){		
 		if($(this).attr("value")!=undefined){
 			$.ajax({
@@ -230,6 +242,7 @@ $(document).ready(function() {
 
 	$(".goTab").click(function(event){
 		event.preventDefault();
+		$("#tab").val($(this).attr("value"))
     	$('.tabs-menu li.current').removeClass('current');
     	$("#tab"+$(this).attr("value")).addClass("current");    
     	var tab = $(this).attr("href");
