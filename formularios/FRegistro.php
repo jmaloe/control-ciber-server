@@ -248,7 +248,8 @@ $(document).ready(function() {
     	var tab = $(this).attr("href");
     	$(".tab-content").not(tab).css("display", "none");
     	$(tab).fadeIn();
-		
+		if($(this).attr("value")==1)
+			location.reload();
     	if($(this).attr("value")==2)
 			consultaHistorial();
 		else if($(this).attr("value")==3)
@@ -606,23 +607,39 @@ $(document).ready(function() {
     	}
 	});
 
+	$("#equipos").on('keyup','.cantidad',function(event){
+		cantidadCambiada(this);
+	});
+
 	$("#equipos").on('change','.cantidad',function(event){		
-		var parent = $(this).parent().parent();
+		cantidadCambiada(this);
+	});
+
+	function cantidadCambiada(who){
+		var parent = $(who).parent().parent();
 		var precio = $(parent).find(".precio").val();
 		var id_producto = getValorEnDataList($(parent).find(".seleccion-articulo").val(),"id");
-		$(parent).find(".total").val( $(this).val()*precio );
-		calcularTotalxEquipo( $(this) );
-		actualizarDetalleVentaEnDB({"cnsdv":$(parent).attr("no_registro"),"id_equipo":$(parent).parent().parent().attr("id"),"id_producto":id_producto,"cantidad":$(this).val(),"precio":precio,"total":$(this).val()*precio});
+		$(parent).find(".total").val( $(who).val()*precio );
+		calcularTotalxEquipo( $(who) );
+		actualizarDetalleVentaEnDB({"cnsdv":$(parent).attr("no_registro"),"id_equipo":$(parent).parent().parent().attr("id"),"id_producto":id_producto,"cantidad":$(who).val(),"precio":precio,"total":$(who).val()*precio});
+	}
+
+	$("#equipos").on('keyup','.precio',function(){
+		precioCambiado(this);
 	});
 
 	$("#equipos").on('change','.precio',function(){
-		var parent = $(this).parent().parent();
+		precioCambiado(this);		
+	});
+
+	function precioCambiado(who){
+		var parent = $(who).parent().parent();
 		var cantidad = $(parent).find(".cantidad").val();
 		var id_producto = getValorEnDataList($(parent).find(".seleccion-articulo").val(),"id");
-		$(parent).find(".total").val( $(this).val()*cantidad );
-		calcularTotalxEquipo( $(this) );
-		actualizarDetalleVentaEnDB({"cnsdv":$(parent).attr("no_registro"),"id_equipo":$(parent).parent().parent().attr("id"),"id_producto":id_producto,"cantidad":cantidad,"precio":$(this).val(),"total":$(this).val()*cantidad});
-	});
+		$(parent).find(".total").val( $(who).val()*cantidad );
+		calcularTotalxEquipo( $(who) );
+		actualizarDetalleVentaEnDB({"cnsdv":$(parent).attr("no_registro"),"id_equipo":$(parent).parent().parent().attr("id"),"id_producto":id_producto,"cantidad":cantidad,"precio":$(who).val(),"total":$(who).val()*cantidad});
+	}
 
 	$("#equipos").on('change','.hi',function(){
 		var parent = $(this).parent().parent().parent();
